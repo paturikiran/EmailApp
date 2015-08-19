@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Gmail App</title>
+    <style>
+        body {
+            margin: 10px;
+            padding: 50px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/css/bootstrap-theme.min.css">
+
+    <script src="Vendor/jquery-1.11.3.min.js"></script>
+    <script src="Vendor/bootstrap.min.js"></script>
+    <script src="Vendor/angular.min.js"></script>
+    <script src="Vendor/angular-ui-router.min.js"></script>
+</head>
+<body ng-app="iisEmail">
+<div class="container" ng-controller="mainController">
+    <div class="row">
+        <div class="col-sm-3 col-md-2">
+            <div class="btn-group">
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                    Email <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Mail</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li ng-click="loadView('settings')"><a href="#">Settings</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-9 col-md-10">
+            <h1>Welcome User</h1>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-sm-3 col-md-2">
+            <a href="#" class="btn btn-danger btn-sm btn-block" role="button">COMPOSE</a>
+            <hr/>
+            <ul class="nav nav-pills nav-stacked">
+                <li class="" ng-repeat="item in leftMenu">
+                    <a href="#"><span class="badge pull-right">{{item.emailCount}}</span> {{item.name}} </a>
+                </li>
+                <!--<li><a href="#">Starred</a></li>
+                <li><a href="#">Important</a></li>
+                <li><a href="#">Sent Mail</a></li>
+                <li>-->
+            </ul>
+        </div>
+        <div class="col-sm-9 col-md-10">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#home" data-toggle="tab"><span class="glyphicon glyphicon-inbox">
+	                </span>Primary</a></li>
+                <li><a href="#profile" data-toggle="tab"><span class="glyphicon glyphicon-user"></span>
+                    Social</a></li>
+                <li><a href="#messages" data-toggle="tab"><span class="glyphicon glyphicon-tags"></span>
+                    Promotions</a></li>
+                <li><a href="#settings" data-toggle="tab"><span class="glyphicon glyphicon-plus no-margin">
+	                </span></a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div ui-view></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="app/main.js"></script>
+<script src="app/controllers/mainController.js"></script>
+</body>
+</html>    
