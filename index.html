@@ -34,7 +34,44 @@
             </div>
         </div>
         <div class="col-sm-9 col-md-10">
-            <h1>Welcome User</h1>
+            <!-- split button -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-default">
+                    <div class="checkbox" style="margin: 0;">
+                        <label>
+                            <input type="checkbox"
+                                   ng-click="selectAllEmail()"
+                                   ng-model="checkAllEmail">
+                        </label>
+                    </div>
+                </button>
+
+            </div>
+            <button type="button" class="btn btn-default" data-toggle="tooltip" title="Refresh">
+                   <span class="glyphicon glyphicon-refresh"></span>   
+            </button>
+            <!-- Single button -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    More <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Mark all as read</a></li>
+                    <li class="divider"></li>
+                    <li class="text-center"><small class="text-muted">Select messages to see more actions</small></li>
+                </ul>
+            </div>
+            <div class="pull-right">
+                <span class="text-muted"><b>1</b>–<b>50</b> of <b>277</b></span>
+                <div class="btn-group btn-group-sm">
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </button>
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
     <hr/>
@@ -72,6 +109,11 @@
     </div>
 </div>
 <script src="app/main.js"></script>
+<!--Services-->
+<script src="app/services/commonApiService.js"></script>
+<script src="app/services/fetchDataService.js"></script>
 <script src="app/controllers/mainController.js"></script>
+<script src="app/controllers/settingsController.js"></script>
+<script src="app/controllers/emailViewController.js"></script>
 </body>
-</html>    
+</html>

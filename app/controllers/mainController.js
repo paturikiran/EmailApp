@@ -20,6 +20,9 @@ app.controller('mainController',['$scope','$state',
             $scope.loadView = function(viewname){
                 $state.go(viewname);
             };
+            $scope.selectAllEmail = function(){
+                console.log($scope.checkAllEmail);
+            }
         };
 
         initializeCtrl();

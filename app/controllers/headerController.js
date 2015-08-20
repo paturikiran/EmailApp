@@ -10,7 +10,7 @@
 angular.module("eMart")
        .controller("headerCtrl", function($scope){
                $scope.welcome="Hello Guys Welcome To angularjs."
-               $scope.clickMe=function() {
-                   document.write($scope.message);
+               $scope.selectAllEmail=function() {
+
                }
             });
