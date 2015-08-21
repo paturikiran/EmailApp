@@ -22,6 +22,13 @@ app.controller('mainController',['$scope','$state',
             };
             $scope.selectAllEmail = function(){
                 console.log($scope.checkAllEmail);
+            };
+
+            $scope.loadEmails =function(filterCriteria){
+              $scope.$broadcast('loadEmail',filterCriteria);
+            };
+            $scope.composeEmail=function(){
+                $('.modal').modal('show');
             }
         };
 
